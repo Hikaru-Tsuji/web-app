@@ -1,25 +1,47 @@
+* {
+  box-sizing: border-box;
+  margin: auto;
+}
+
+html body {
+  width: 100%;
+  margin: 0;
+  /* background-color: #4a150d; */
+  font-family:'Lato', 'Noto Sans Japanese', '游ゴシック Medium', '游ゴシック体', 'Yu Gothic Medium', YuGothic, 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
+  font-size: calc(75.0% + 4 * (100vw - 480px) / 800)
+}
 
 img {
 max-width: 100%;
 
 }
 
-#gallery {
+
+.wrapper {
+  padding: 0 10%;
+  /* background-color: #eee0b5; */
+  }
+
+.head {
+  text-align: center;
+  font-size: 1em;
+}
+
+
+
+/* instagram */
+.instagram-gallery {
   overflow: hidden;
-  box-sizing: border-box;
-  padding-left: 1px;
 }
 
 .img_block {
   display: inline-block;
-  box-sizing: border-box;
-  padding: 2px;
+  padding: 1%;
   width: 33.3%;
 }
 
 .img_block a {
   display: block;
-  text-align: bottom;
   font-size: 0;
 }
 
