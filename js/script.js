@@ -20,5 +20,5 @@ $(document).ready(function(){
       $('#gallery').text(textStatus);
     })
   }
-  getData = (baseURL);
+  getData(baseURL);
 });
