@@ -1,6 +1,6 @@
 $(document).ready(function(){
   var instaURL = 'https://api.instagram.com/v1/users/self/media/recent';
-  var imgData;
+  var instaImgData;
 
   var getInstaData = function(url){
     $.ajax({
@@ -13,10 +13,10 @@ $(document).ready(function(){
     })
 
     .done(function(data){
-      imgData = data;
-      console.dir(imgData);
+      instaImgData = data;
+      console.dir(instaImgData);
 
-      $(imgData.data).each(function(){
+      $(instaImgData.data).each(function(){
 
         var caption ='';
         if(this.caption){
@@ -25,22 +25,19 @@ $(document).ready(function(){
 
         $('#gallery').append(
           $('<div class="img_block"></div>')
-          // .append(
-          //   $('<a></a>')
-          //   .attr('href', this.link)
-            // .attr('target', '_blank')
+          .append(
+            $('<a></a>')
+            .attr('href', this.link)
+            .attr('target', '_blank')
             .append(
               $('<img>').attr('src',this.images.low_resolution.url)
             )
-          // )
-
+          )
         );
-
       });
     })
     .fail(function(data){
-      $('#gallery').text(textStatus);
-    })
+      console.log('instagram_failed');
   }
   getInstaData(instaURL);
 
