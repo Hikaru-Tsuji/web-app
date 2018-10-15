@@ -2,12 +2,12 @@ $(document).ready(function(){
   var instaURL = 'https://api.instagram.com/v1/users/self/media/recent';
   var imgData;
 
-  var getData = function(url){
+  var getInstaData = function(url){
     $.ajax({
       url: url,
       dataType: 'jsonp',
       data: {
-        access_token:'',
+        access_token:insta_accesstoken,
         count: 12
       }
     })
@@ -42,6 +42,6 @@ $(document).ready(function(){
       $('#gallery').text(textStatus);
     })
   }
-  getData(instaURL);
+  getInstaData(instaURL);
 
 });
