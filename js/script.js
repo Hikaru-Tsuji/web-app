@@ -14,6 +14,7 @@ $(document).ready(function(){
         part: 'id',
         channelId:youtube_userName,
         order: 'date',
+        maxResults: 6,
         key: youtube_APIkey,
       }
     })
@@ -27,7 +28,7 @@ $(document).ready(function(){
         videoName = this.id.videoId;
 
         var iframeText ='';
-        iframeText  = '<iframe width="560"height="315"src="https://www.youtube.com/embed/'
+        iframeText  = '<iframe width="640px" height="360px" src="https://www.youtube.com/embed/'
                       + videoName + '?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>';
 
 
