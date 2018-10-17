@@ -14,7 +14,6 @@ html body {
 
 img {
 max-width: 100%;
-
 }
 
 .wrapper {
@@ -41,7 +40,7 @@ header {
   font-size: 1.5em;
 }
 
-.siteName:before, .siteName:after {
+.siteName::before, .siteName::after {
   content: '';
   position: absolute;
   top: 50%;
@@ -51,16 +50,13 @@ header {
   background-color: #004970;
 }
 
-.siteName:before { left:  0; }
-.siteName:after  { right: 0; }
-
-
+.siteName::before { left:  0; }
+.siteName::after  { right: 0; }
 
 .introduction {
   width: 20em;
   font-size: 1em;
 }
-
 
 .head {
   text-align: center;
@@ -71,18 +67,45 @@ header {
   padding:  2% 5%;
 }
 
+.btn {
+  width: 15em;
+  padding-bottom: 10%;
+  text-align: center;
+}
+
+.btn-content {
+  font-size: 1.2em;
+  color: #efebdd;
+  background-color: rgba(205,204,118,1);
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  padding: 1.2em 0;
+}
+
+.btn-content:hover {
+  cursor : pointer;
+  background-color: rgba(205,204,118,0.5);
+  transition: 0.5s;
+}
+
+.btn-content:active {
+  background-color: rgba(205,204,118,1);
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0.5);
+  transition: 0.2s;
+}
+
 /* youtube */
 .youtube-movie {
   display: flex;
   flex-direction: column;
-  padding: 5% 5% 0 5%;
+  padding: 5%;
 }
 
 .mov_block {
   position: relative;
   width:  100%;
   height: 0;
-  margin-bottom: 5%;
+  margin: 3% 0;
   padding-bottom: 56.25%;
 }
 
@@ -100,8 +123,6 @@ header {
   background-repeat: no-repeat;
   background-position: 50% 50%;
 }
-
-
 
 
 /* instagram */
