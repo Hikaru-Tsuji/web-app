@@ -6,9 +6,10 @@
 html body {
   width: 100%;
   margin: 0;
-  /* background-color: #4a150d; */
+  background-color: #004970;
+  color: #004970;
   font-family:'Lato', 'Noto Sans Japanese', '游ゴシック Medium', '游ゴシック体', 'Yu Gothic Medium', YuGothic, 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
-  font-size: calc(75.0% + 4 * (100vw - 480px) / 800)
+  font-size: calc(75.0% + 4 * (100vw - 480px) / 800);
 }
 
 img {
@@ -17,41 +18,50 @@ max-width: 100%;
 }
 
 .wrapper {
-  padding: 0 10%;
-  /* background-color: #eee0b5; */
+  background-color: #efebdd;
+  margin: 0 10%;
   }
 
 
 
 .head {
   text-align: center;
-  font-size: 1em;
+  font-size: 1.5em;
+  border-top:    double 5px;
+  border-bottom: double 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  padding:  2% 5%;
 }
 
 /* youtube */
 .youtube-movie {
   display: flex;
   flex-direction: column;
+  padding: 5% 5% 0 5%;
 }
 
 .mov_block {
-  width:100%;
-  padding-bottom: 56.25%;
-  height:0px;
   position: relative;
-  margin: 3% 0;
+  width:  100%;
+  height: 0;
+  margin-bottom: 5%;
+  padding-bottom: 56.25%;
 }
 
 .mov_block iframe {
   position: absolute;
-top: 0;
-left: 0;
-width: 100%;
-height: 100%;
+  top:  0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 
+  border: 1px solid #dcd7c9;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  min-height: 80px;
+  background-image: url(../img/loading.gif);
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
 }
-
-
 
 
 
@@ -59,20 +69,35 @@ height: 100%;
 /* instagram */
 .instagram-gallery {
   overflow: hidden;
+  padding: 5%;
 }
 
 .img_block {
   display: inline-block;
-  padding: 1%;
   width: 33.3%;
+  padding:  1%;
+
 }
 
 .img_block a {
   display: block;
   font-size: 0;
+
+  border: 1px solid #dcd7c9;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  min-height: 80px;
+  background-image: url(../img/loading.gif);
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
 }
 
-.caption {
+.copyRightText {
+  text-align: center;
+  font-size: 1em;
+  padding-bottom: 3%;
+}
+
+/* .caption {
   margin: 0 0 1em 0;
   padding: 0;
   overflow: hidden;
@@ -80,4 +105,4 @@ height: 100%;
   text-overflow: ellipsis;
   font-size: 80%;
   color: #666;
-}
+} */
