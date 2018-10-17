@@ -14,14 +14,14 @@ $(document).ready(function(){
         part: 'id',
         channelId:youtube_userName,
         order: 'date',
-        maxResults: 6,
+        maxResults: 3,
         key: youtube_APIkey,
       }
     })
 
     .done(function(data){
       youtubeImgData = data;
-      console.dir(youtubeImgData);
+      // console.dir(youtubeImgData);
 
       $(youtubeImgData.items).each(function(){
         var videoName ='';
@@ -57,13 +57,13 @@ $(document).ready(function(){
 
     .done(function(data){
       instaImgData = data;
-      console.dir(instaImgData);
+      // console.dir(instaImgData);
 
       $(instaImgData.data).each(function(){
-        var caption ='';
-        if(this.caption){
-          caption = this.caption.text;
-        }
+        // var caption ='';
+        // if(this.caption){
+        //   caption = this.caption.text;
+        // }
         $('#gallery').append(
           $('<div class="img_block"></div>').append(
             $('<a></a>')
@@ -83,5 +83,8 @@ $(document).ready(function(){
 
   getYoutubeData(youtubeURL);
   getInstaData(instaURL);
+
+  $('#copyRight').append(copyRight);
+
 
 });
