@@ -77,12 +77,12 @@ $(document).ready(function(){
   }
 
   $('#yt-btn').append(
-  $('<a class="btn-content">Youtube</a>')
+  $('<a class="btn-content">Youtubeへ</a>')
   .attr('href',chanelURL)
   .attr('target', '_blank'));
 
   $('#inst-btn').append(
-    $('<a class="btn-content">Instagram</a>')
+    $('<a class="btn-content">Instagramへ</a>')
     .attr('href',instaMypageURL)
     .attr('target', '_blank'));
 
