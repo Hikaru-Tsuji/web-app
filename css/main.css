@@ -16,6 +16,10 @@ img {
 max-width: 100%;
 }
 
+a {
+  text-decoration: none;
+}
+
 .wrapper {
   background-color: #efebdd;
   margin: 0 10%;
@@ -74,6 +78,7 @@ header {
 }
 
 .btn-content {
+  display: block;
   font-size: 1.2em;
   color: #efebdd;
   background-color: rgba(205,204,118,1);

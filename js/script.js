@@ -2,9 +2,11 @@ $(document).ready(function(){
 
   var youtubeURL ='https://www.googleapis.com/youtube/v3/search';
   var youtubeImgData;
+  var chanelURL ='https://www.youtube.com/channel/' + youtube_userName + '/videos';
 
   var instaURL = 'https://api.instagram.com/v1/users/self/media/recent';
   var instaImgData;
+  var instaMypageURL ='https://www.instagram.com/' + instagram_userName;
 
   var getYoutubeData = function(url){
     $.ajax({
@@ -31,13 +33,10 @@ $(document).ready(function(){
         iframeText  = '<iframe width="640px" height="360px" src="https://www.youtube.com/embed/'
                       + videoName + '?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>';
 
-
         $('#movie').append(
           $('<div class="mov_block"></div>').append(iframeText)
         );
       });
-
-
     })
 
     .fail(function(data){
@@ -51,7 +50,7 @@ $(document).ready(function(){
       dataType: 'jsonp',
       data: {
         access_token:insta_accesstoken,
-        count: 12
+        count: 9
       }
     })
 
@@ -66,11 +65,7 @@ $(document).ready(function(){
         // }
         $('#gallery').append(
           $('<div class="img_block"></div>').append(
-            $('<a></a>')
-            .attr('href', this.link)
-            .attr('target', '_blank').append(
-              $('<img>').attr('src',this.images.low_resolution.url)
-            )
+            $('<img>').attr('src',this.images.low_resolution.url)
           )
         );
       });
@@ -80,6 +75,17 @@ $(document).ready(function(){
       console.log('instagram_failed');
     })
   }
+
+  $('#yt-btn').append(
+  $('<a class="btn-content">Youtube</a>')
+  .attr('href',chanelURL)
+  .attr('target', '_blank'));
+
+  $('#inst-btn').append(
+    $('<a class="btn-content">Instagram</a>')
+    .attr('href',instaMypageURL)
+    .attr('target', '_blank'));
+
 
   getYoutubeData(youtubeURL);
   getInstaData(instaURL);
