@@ -1,14 +1,28 @@
 $(document).ready(function(){
 
-  var youtubeURL ='https://www.googleapis.com/youtube/v3/search';
-  var youtubeImgData;
-  var chanelURL ='https://www.youtube.com/channel/' + youtube_userName + '/videos';
+  {
+      const chanelURL =`https://www.youtube.com/channel/${youtube_userName}/videos`;
+      $('#yt-btn').append(
+        $('<a class="btn-content">Youtubeへ</a>')
+        .attr('href',chanelURL)
+        .attr('target', '_blank'));
+  }
 
-  var instaURL = 'https://api.instagram.com/v1/users/self/media/recent';
-  var instaImgData;
-  var instaMypageURL ='https://www.instagram.com/' + instagram_userName;
+  {
+    const instaMypageURL =`https://www.instagram.com/${instagram_userName}`;
+    $('#inst-btn').append(
+      $('<a class="btn-content">Instagramへ</a>')
+      .attr('href',instaMypageURL)
+      .attr('target', '_blank'));
+  }
 
-  var getYoutubeData = function(url){
+  $('#copyRight').append(copyRight);
+
+  let youtubeURL ='https://www.googleapis.com/youtube/v3/search';
+  let instaURL = 'https://api.instagram.com/v1/users/self/media/recent';
+
+
+  const getYoutubeData = function(url){
     $.ajax({
       url: url,
       dataType: 'jsonp',
@@ -22,19 +36,18 @@ $(document).ready(function(){
     })
 
     .done(function(data){
-      youtubeImgData = data;
+      const youtubeImgData = data;
       // console.dir(youtubeImgData);
 
       $(youtubeImgData.items).each(function(){
-        var videoName ='';
-        videoName = this.id.videoId;
 
-        var iframeText ='';
-        iframeText  = '<iframe width="640px" height="360px" src="https://www.youtube.com/embed/'
-                      + videoName + '?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>';
-
+        const videoName = this.id.videoId;
+        const iframeText  = `https://www.youtube.com/embed/${videoName}`
         $('#movie').append(
-          $('<div class="mov_block"></div>').append(iframeText)
+          $('<div class="mov_block"></div>').append(
+            $('<iframe width="640px" height="360px" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>')
+            .attr('src',iframeText)
+          )
         );
       });
     })
@@ -44,7 +57,8 @@ $(document).ready(function(){
     })
   }
 
-  var getInstaData = function(url){
+
+  const getInstaData = function(url){
     $.ajax({
       url: url,
       dataType: 'jsonp',
@@ -55,14 +69,11 @@ $(document).ready(function(){
     })
 
     .done(function(data){
-      instaImgData = data;
+      const instaImgData = data;
       // console.dir(instaImgData);
 
       $(instaImgData.data).each(function(){
-        // var caption ='';
-        // if(this.caption){
-        //   caption = this.caption.text;
-        // }
+
         $('#gallery').append(
           $('<div class="img_block"></div>').append(
             $('<img>').attr('src',this.images.low_resolution.url)
@@ -76,21 +87,7 @@ $(document).ready(function(){
     })
   }
 
-  $('#yt-btn').append(
-  $('<a class="btn-content">Youtubeへ</a>')
-  .attr('href',chanelURL)
-  .attr('target', '_blank'));
-
-  $('#inst-btn').append(
-    $('<a class="btn-content">Instagramへ</a>')
-    .attr('href',instaMypageURL)
-    .attr('target', '_blank'));
-
-
   getYoutubeData(youtubeURL);
   getInstaData(instaURL);
-
-  $('#copyRight').append(copyRight);
-
 
 });
