@@ -4,39 +4,49 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <!-- css file -->
-    <link rel="stylesheet" type="text/css" href="../css/main.css">
-
-    <title>Enome Gallery</title>
-  </head>
-  <body>
-    <div  class="wrapper">
-      <header>
-        <div class="header-content">
-        <img class="icon" src="../img/icon.svg" alt="icon">
-        <div>
-        <p class="siteName">Enome Gallery</p>
-      </div>
-        <p class="introduction">
-          最新のYoutubeへ投稿した動画<br>
-          Instagramの画像を紹介しています</p>
-      </div>
-      </header>
-
-      <p class="head">Youtube</p>
-      <div id="movie" class="youtube-movie"></div>
-      <div id="yt-btn" class="btn"></div>
-
-      <p class="head">Instagram</p>
-      <div id="gallery" class="instagram-gallery"></div>
-      <div id="inst-btn" class="btn"></div>
-
-      <p id="copyRight" class="copyRightText"></p>
-    </div>
-
     <!-- javascript file -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src=../js/accesstoken.js></script>
     <script src=../js/script.js></script>
+    <!-- css file -->
+    <link rel="stylesheet" type="text/css" href="../css/main.css">
+    <title>Enome Gallery</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <div class="header-content">
+          <img class="icon" src="../img/icon.svg" alt="icon">
+          <div>
+            <p class="siteName">Enome Gallery</p>
+          </div>
+          <p class="introduction">
+            最新のYoutubeへ投稿した動画<br>
+            Instagramの画像を紹介しています</p>
+          </div>
+        </header>
+        
+        <main>
+          <div class="YOUTUBE">
+            <p class="head-text">Youtube</p>
+            <div id="movie" class="youtube-movie"></div>
+            <div class="btn">
+              <a class="btn-content" href="https://www.youtube.com/channel/UCifqUptiSNtp1u8ma9LryGA/videos" target ="_blank" >Youtubeへ</a>
+            </div>
+          </div>
+
+          <div class="INSTAGRAM">
+            <p class="head-text">Instagram</p>
+            <div id="gallery" class="instagram-gallery"></div>
+            <div class="btn">
+              <a class="btn-content" href ="https://www.instagram.com/enomemone" target = "_blank" >Instagramへ</a>
+            </div>
+          </div>
+        </main>
+
+        <footer>
+          <p class="copyRightText">© 2018 Enome. All Rights Reserved.</p>
+        </footer>
+    </div>
   </body>
 </html>
